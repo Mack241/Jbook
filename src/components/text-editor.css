@@ -5,6 +5,10 @@
   color: #d4d4d4 !important;
 }
 
+.wmde-markdown {
+  padding: 10px;
+}
+
 .w-md-editor ul {
   line-height: 1;
 }
@@ -65,4 +69,8 @@
 
 .text-editor .token.list.punctuation {
   background-color: unset;
+}
+
+.card {
+  height: 50px;
 }

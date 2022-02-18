@@ -19,13 +19,13 @@ export const fetchPlugin = (inputCode: string) => {
 
     //Common cache checker
     //if no cachedResult then move on to next build.onLoad
-  build.onLoad({ filter: /.*/ }, async (args: any) => {
-    const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(args.path)
+    build.onLoad({ filter: /.*/ }, async (args: any) => {
+      const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(args.path)
 
-    if(cachedResult) {
-      return cachedResult
-    }
-  })
+      if(cachedResult) {
+        return cachedResult
+      }
+    })
 
     build.onLoad({ filter: /.css$/ }, async (args: any) => {
 
@@ -65,7 +65,7 @@ export const fetchPlugin = (inputCode: string) => {
       }
       //store response in cache
       await fileCache.setItem(args.path, result)
-
+      console.log(result)
       return result
     });
     }
